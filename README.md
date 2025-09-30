@@ -1,5 +1,41 @@
-**Solo Pong**
+# Solopong
 
-Jeu inspiré du classique rétro **Pong,** en version solo : affronte les murs et tente de garder la balle en jeu le plus longtemps possible.
+Inspiré du classique jeu rétro **Pong**, cette version se joue en mode solo !
+Visitez marinlrdl.github.com/Solopong pour jouer.
 
-*La partie est perdue si la balle passe derrière la raquette*
+## 🎯 Objectif du jeu
+
+Maintenez la balle en jeu le plus longtemps possible en la faisant rebondir avec votre raquette. Votre score augmente chaque seconde de survie.
+
+## 🕹️ Contrôles
+
+### Clavier :
+- **Flèche gauche** ← : Déplacer la raquette vers la gauche
+- **Flèche droite** → : Déplacer la raquette vers la droite
+
+### Boutons (interface) :
+- **Flèches gauche/droite** : Déplacer la raquette
+- **Start** : Commencer une nouvelle partie
+- **Reset** : Réinitialiser le jeu
+
+
+## 🛠️ Technologies utilisées
+
+- HTML5
+- JavaScript
+- CSS
+
+## 📁 Structure du projet
+
+```
+solopong/
+│
+├── index.html          # Structure principale
+├── style.css           # Styles et mise en page
+├── script.js           # Logique du jeu
+└── README.md           # Documentation
+```
+
+---
+
+**Amusez-vous bien !** 🏓

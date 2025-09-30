@@ -45,9 +45,9 @@ function draw() {
 }
 
 function startGame() {
-    const direction = Math.random() > 0.5 ? 1 : -1;
-    ball.dx = direction * ball.speed;
-    ball.dy = direction * ball.speed;
+    const direction = Math.random() * Math.PI;
+    ball.dx = direction * Math.random();
+    ball.dy = - ball.speed;
     startTime = Date.now();
     gameLoop();
 }
