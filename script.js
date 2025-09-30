@@ -45,6 +45,29 @@ function update() {
     }
 }
 
+function movePaddle() {
+    document.querySelector('.fa-arrow-left').addEventListener('click', () => {
+        if(paddle.x > 0) {
+            paddle.x -= 10  ;
+        }
+    });
+    document.querySelector('.fa-arrow-right').addEventListener('click', () => {
+        if(paddle.x < canvas.width - paddle.width) {
+            paddle.x += 10;
+        }
+    });
+
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' && paddle.x > 0) {
+            paddle.x -= 10;
+        }
+        if (e.key === 'ArrowRight' && paddle.x < canvas.width - paddle.width) {
+            paddle.x += 10;
+        }
+    });
+}
+
 function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     draw();
@@ -53,4 +76,5 @@ function gameLoop() {
 }
 
 draw();
+movePaddle();
 startGame();
