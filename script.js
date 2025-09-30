@@ -5,6 +5,34 @@ let ball = { x: canvas.width / 2, y: canvas.height / 2, radius: 20, speed: 5, dx
 let paddle = { x: 10, y: canvas.height - 40, width: 100, height: 10 };
 let score = document.getElementById('score');
 let reset = document.getElementById('reset-button');
+let start = document.getElementById('start-button');
+
+let isPlaying = false;
+
+start.onclick = function() {
+    if (!isPlaying) {
+        isPlaying = true;
+        startGame();
+    }
+};
+
+reset.onclick = function() {
+    cancelAnimationFrame(gameLoop);
+    isPlaying = false;
+    initialPosition();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    draw();
+    score.textContent = 'Score: 0';
+};
+
+
+function initialPosition() {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+    ball.dx = 5;
+    ball.dy = 5;
+    paddle.x = (canvas.width - paddle.width) / 2;
+}
 
 function draw() {
     ctx.fillStyle = 'white';
@@ -28,7 +56,7 @@ function update() {
     ball.x += ball.dx;
     ball.y += ball.dy;
 
-    
+
     score.textContent = 'Score: ' + Math.floor((Date.now() - startTime) / 1000);
 
 
@@ -44,6 +72,7 @@ function update() {
         ball.dy = -ball.dy;
     }
     if (ball.y + ball.radius > canvas.height ) {
+        isPlaying = false;
         alert('Game Over! Your score: ' + Math.floor((Date.now() - startTime) / 1000));
     }
 
@@ -74,6 +103,7 @@ function movePaddle() {
 }
 
 function gameLoop() {
+    if (!isPlaying) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     draw();
     update();
@@ -82,4 +112,3 @@ function gameLoop() {
 
 draw();
 movePaddle();
-startGame();
