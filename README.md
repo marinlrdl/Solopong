@@ -1,7 +1,7 @@
 # Solopong
 
 Inspiré du classique jeu rétro **Pong**, cette version se joue en mode solo !
-Visitez marinlrdl.github.com/Solopong pour jouer.
+Visitez <https://marinlrdl.github.io/Solopong> pour jouer.
 
 ## 🎯 Objectif du jeu
 
