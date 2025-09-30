@@ -28,6 +28,9 @@ function update() {
     ball.x += ball.dx;
     ball.y += ball.dy;
 
+    
+    score.textContent = 'Score: ' + Math.floor((Date.now() - startTime) / 1000);
+
 
     if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
         ball.dx = -ball.dx;
@@ -41,8 +44,10 @@ function update() {
         ball.dy = -ball.dy;
     }
     if (ball.y + ball.radius > canvas.height ) {
-        alert('Game Over! Your score: ' + Math.floor((Date.now() - startTime) / 1000) + ' seconds');
+        alert('Game Over! Your score: ' + Math.floor((Date.now() - startTime) / 1000));
     }
+
+    
 }
 
 function movePaddle() {
@@ -57,7 +62,7 @@ function movePaddle() {
         }
     });
 
-    
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && paddle.x > 0) {
             paddle.x -= 10;
